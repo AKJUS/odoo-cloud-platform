@@ -65,6 +65,9 @@ class CloudPlatform(models.AbstractModel):
 
     @api.model
     def check(self):
+        if is_true(os.environ.get("ODOO_CLOUD_PLATFORM_UNSAFE")):
+            _logger.warning("cloud platform checks disabled, this is not safe")
+            return
         environment_name = self._get_running_env()
         self._check_redis(environment_name)
 

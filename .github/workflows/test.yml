@@ -61,6 +61,8 @@ jobs:
     env:
       INCLUDE: "${{ matrix.include }}"
       EXCLUDE: "${{ matrix.exclude }}"
+      # Disable Redis check
+      ODOO_CLOUD_PLATFORM_UNSAFE: 1
     steps:
       - uses: actions/checkout@v3
         with:
