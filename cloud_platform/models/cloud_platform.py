@@ -4,7 +4,6 @@
 import logging
 import os
 import re
-from collections import namedtuple
 
 from odoo import api, models
 from odoo.tools.config import config

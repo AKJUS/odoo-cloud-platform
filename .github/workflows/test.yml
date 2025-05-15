@@ -36,17 +36,8 @@ jobs:
       matrix:
         include:
           - container: ghcr.io/oca/oca-ci/py3.10-odoo18.0:latest
-            include: "attachment_azure,cloud_platform_azure"
             name: test with Odoo
           - container: ghcr.io/oca/oca-ci/py3.10-ocb18.0:latest
-            include: "attachment_azure,cloud_platform_azure"
-            name: test with OCB
-            makepot: "false"
-          - container: ghcr.io/oca/oca-ci/py3.10-odoo18.0:latest
-            exclude: "attachment_azure,cloud_platform_azure"
-            name: test with Odoo
-          - container: ghcr.io/oca/oca-ci/py3.10-ocb18.0:latest
-            exclude: "attachment_azure,cloud_platform_azure"
             name: test with OCB
             makepot: "false"
     services:
